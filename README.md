@@ -24,4 +24,28 @@ Découpage des bouts de code pour le projet (fonctionnalités) :
 - remplir une forme fermée d'une couleur (fill)
 - changer la couleur de fond de la forme
 - changer la taille d'une image
+
+**Quelques snippets à tester :**
+
+Charger et afficher une image + appliquer un filtre
+```
+let img;
+
+function preload() {
+  img = loadImage("https://picsum.photos/400/300"); // image aléatoire
+}
+
+function setup() {
+  createCanvas(600, 400);
+}
+
+function draw() {
+  background(220);
+  image(img, 0, 0, width, height);
+  filter(GRAY); // essaie aussi: INVERT, THRESHOLD, BLUR
+}
+```
+**Interface : slider pour modifier la taille d’un texte**
+![alt text](image.png)
+
  
