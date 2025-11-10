@@ -27,9 +27,9 @@ Découpage des bouts de code pour le projet (fonctionnalités) :
 - changer la couleur de fond de la forme
 - changer la taille d'une image
 
-**Quelques snippets à tester :**
+<u>Quelques snippets à tester :</u>
 
-Afficher le canvas p5js de façon responsive dans la page
+**Afficher le canvas p5js de façon responsive dans la page**
 ```
 function setup() {
   createCanvas(windowWidth, windowHeight);

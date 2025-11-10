@@ -1,7 +1,10 @@
 let images = [];
 let displayedImages = [];
-let shapeIsClosed = false;
-let closeButton;
+let gui;
+let params = {
+  shapeIsClosed: false
+};
+let isMouseOverGUI = false;
 
 function preload() {
   for (let i = 1; i <= 6; i++) {
@@ -13,13 +16,22 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  // Créer le bouton pour fermer la forme
-  closeButton = createButton('Fermer la forme');
-  closeButton.position(20, 20);
-  closeButton.mousePressed(closeShape);
-  closeButton.style('padding', '10px 20px');
-  closeButton.style('font-size', '16px');
-  closeButton.style('cursor', 'pointer');
+  // Créer l'interface dat.GUI
+  gui = new dat.GUI();
+  gui.add(params, 'shapeIsClosed').name('Fermer la forme');
+
+  // Ajouter des écouteurs d'événements sur dat.GUI
+  setTimeout(() => {
+    let guiElement = document.querySelector('.dg.ac');
+    if (guiElement) {
+      guiElement.addEventListener('mouseenter', () => {
+        isMouseOverGUI = true;
+      });
+      guiElement.addEventListener('mouseleave', () => {
+        isMouseOverGUI = false;
+      });
+    }
+  }, 100);
 }
 
 function draw() {
@@ -35,7 +47,7 @@ function draw() {
     for (let img of displayedImages) {
       vertex(img.x, img.y);
     }
-    if (shapeIsClosed) {
+    if (params.shapeIsClosed) {
       endShape(CLOSE);
     } else {
       endShape();
@@ -50,8 +62,8 @@ function draw() {
 }
 
 function mousePressed() {
-  // Ne pas ajouter d'image si on clique sur le bouton
-  if (mouseX < 200 && mouseY < 60) {
+  // Ne pas ajouter d'image si la souris est sur dat.GUI
+  if (isMouseOverGUI) {
     return;
   }
 
@@ -62,16 +74,6 @@ function mousePressed() {
     x: mouseX,
     y: mouseY
   });
-}
-
-function closeShape() {
-  shapeIsClosed = !shapeIsClosed;
-
-  if (shapeIsClosed) {
-    closeButton.html('Ouvrir la forme');
-  } else {
-    closeButton.html('Fermer la forme');
-  }
 }
 
 function windowResized() {
