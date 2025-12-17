@@ -19,6 +19,16 @@ function preload() {
   }
 }
 
+
+P5Capture.setDefaultOptions({
+  format: "gif",
+  framerate: 10,
+  quality: 0.5,
+  width: 320,
+});
+
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 

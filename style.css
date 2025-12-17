@@ -1,8 +1,17 @@
-html, body {
-  margin: 0;
-  padding: 0;
+html,
+body {
+    margin: 0;
+    padding: 0;
 }
 
 canvas {
-  display: block;
+    display: block;
 }
+
+.p5c-container {
+    right: 80% !important;
+    top: 100px !important;
+    left: 80% !important;
+    width: 200px;
+}
+
