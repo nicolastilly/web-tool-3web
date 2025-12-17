@@ -1,5 +1,7 @@
 # T1 - creative coding: web tool - 3Web
 
+![capture écran](capture.png)
+
 ## 1. L'idée
 - images en cercle
 - shapes/formes
