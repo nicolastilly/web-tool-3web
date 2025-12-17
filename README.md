@@ -4,6 +4,12 @@
 
 ![capture vidéo](capture-video.gif)
 
+**Notice :**
+- cliquer dans la page pour ajouter des images
+- fermer la forme avec le bouton dans l'interface
+- utiliser la barre espace pour ajouter aléatoirement une couleur de fond à la forme
+- appuyer sur la touche "m" pour faire tourner les images
+
 ## 1. L'idée
 - images en cercle
 - shapes/formes
