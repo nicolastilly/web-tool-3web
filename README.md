@@ -2,6 +2,8 @@
 
 ![capture écran](capture.png)
 
+![capture vidéo](capture-video.gif)
+
 ## 1. L'idée
 - images en cercle
 - shapes/formes
